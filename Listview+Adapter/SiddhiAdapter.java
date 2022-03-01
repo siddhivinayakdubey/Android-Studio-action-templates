@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +35,16 @@ public class SiddhiAdapter extends ArrayAdapter<String> {
         convertView= LayoutInflater.from(getContext()).inflate(R.layout.siddhi_adapter,parent,false);
         TextView t=convertView.findViewById(R.id.listtext);
         t.setText(getItem(position));
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "pro hai bhai tu: "+position, Toast.LENGTH_SHORT).show();
+            }
+        });
         return convertView;
     }
+
+
+
+
 }
